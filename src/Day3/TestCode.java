@@ -1,4 +1,6 @@
-package Day1;
+package Day3;
+
+
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,13 +9,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-
-
-public class TestPerson {
+public class TestCode {
 	
 	SessionFactory factory;
 	
-	/* Setting up Hibernate & create session factory*/
 	public void setup(){
 		Configuration configuration = new Configuration();
 		configuration.configure();
@@ -22,22 +21,25 @@ public class TestPerson {
 		ServiceRegistry serviceRegistry = srBuilder.buildServiceRegistry();
 		factory = configuration.buildSessionFactory(serviceRegistry);
 	}
-	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		TestPerson tp = new TestPerson();
-		tp.setup();
+		TestCode tc=new TestCode();
+		tc.setup();
+		Session session=tc.factory.openSession();
+		Transaction tx=session.beginTransaction();
 		
-		Session session = tp.factory.openSession();
-		Transaction tx = session.beginTransaction();
-		Employee e1 = new Employee("Awantik");
-		
-		session.save(e1);
+		Email email=new Email("First email");
+		Message message=new Message("Firstmessage");
+		//email.setMessage(message);
+		message.setEmail(email);
+		session.save(email);
+		session.save(message);
 		tx.commit();
 		session.close();
 		
+
 	}
 
 }

@@ -8,20 +8,22 @@ import javax.persistence.Id;
 
 @Entity
 public class Employee {
-		
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-		Long id;
+	@Id    
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	Long id;
+	
 	@Column
-		String Name;
+	String name;
+	
+	public Employee(){
 		
-		public Employee(){
-			
-		}
-		
-		
-		public Employee(String name){
-			this.Name=name;
-		}
+	}
+	
+	public Employee(String name) {
+		// TODO Auto-generated constructor stub
+		this.name = name;
+	}
+	
+
 }

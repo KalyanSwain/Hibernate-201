@@ -17,9 +17,9 @@
    <mapping class="Day2.Ranking"/>
    <mapping class="Day2.Skill"/>
    <mapping class="Day2.Student"/>
-   <mapping class="Day2.WishList"/>
-   <mapping class="Day2.UserDetails"/>
-   <mapping class="Day2.MovieDomain"/>
+   <mapping class="MovieManager.WishList"/>
+   <mapping class="MovieManager.UserDetails"/>
+   <mapping class="MovieManager.MovieDomain"/>
    <mapping class="Day1.Employee"/>
    <mapping class="Day3.Email"/>
    <mapping class="Day3.Message"/>
